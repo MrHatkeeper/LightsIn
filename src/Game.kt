@@ -22,14 +22,14 @@ class Game {
 
     private fun rotateValues() {
         val coo = getCoordinates(grid)
-        isValidField(coo[0],coo[1])
-        isValidField(coo[0]-1,coo[1])
-        isValidField(coo[0]+1,coo[1])
-        isValidField(coo[0],coo[1]-1)
-        isValidField(coo[0],coo[1]+1)
+        switchingValidFieldValue(coo[0],coo[1])
+        switchingValidFieldValue(coo[0]-1,coo[1])
+        switchingValidFieldValue(coo[0]+1,coo[1])
+        switchingValidFieldValue(coo[0],coo[1]-1)
+        switchingValidFieldValue(coo[0],coo[1]+1)
     }
 
-    private fun isValidField(x: Int, y: Int) {
+    private fun switchingValidFieldValue(x: Int, y: Int) {
         if (x >= 0 && y >= 0 && x < grid.xSize && y < grid.ySize) {
             grid.grid[x][y].switchValues()
         }
